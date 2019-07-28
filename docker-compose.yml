@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  openresty-simple:
+    image: openresty-simple
+    hostname: openresty-simple
+    container_name: openresty-simple
+    restart: always
+    network_mode: "bridge"
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+    volumes:
+      - ./conf/:/usr/local/openresty/nginx/conf/
+    build:
+      context: .
