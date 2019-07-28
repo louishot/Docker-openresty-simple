@@ -1,0 +1,13 @@
+yum install epel-release -y
+yum update -y
+yum install wget python36 docker git -y
+cd /tmp
+wget https://bootstrap.pypa.io/get-pip.py
+python36 get-pip.py
+rm -rf get-pip.py
+pip install docker-compose
+systemctl start docker
+systemctl enable docker
+
+
+
